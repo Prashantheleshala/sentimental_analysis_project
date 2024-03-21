@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Classic gradient background */
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff3e0; /* Light orange container background */
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: -50px; /* Shift the box up */
+        }
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if prediction == 'positive' %}
+            <div class="emoji">😁<div>
+            <h1>Positive Sentiment</h1>
+        {% elif prediction == 'negative' %}
+            <div class="emoji">😭</div>
+            <h1>Negative Sentiment</h1>
+        {% endif %}
+        <p>The sentiment of the review is: {{ prediction }}</p>
+    </div>
+</body>
+</html>
